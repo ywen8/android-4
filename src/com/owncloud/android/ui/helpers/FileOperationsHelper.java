@@ -137,7 +137,8 @@ public class FileOperationsHelper {
      * @param file The file to share.
      * @param name Optional public share name
      * @param password Optional password to protect the public share
-     * @param expirationTimeInMillis Optional expiration time
+     * @param expirationTimeInMillis        Expiration date to set. A negative value clears the current
+     *                                      expiration date, leaving the link unrestricted. Zero makes no change.
      * @param uploadToFolderPermission Optional permissions to upload files to the folder
      */
     public void shareFileViaLink(OCFile file,

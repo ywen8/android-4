@@ -86,6 +86,8 @@ public class CreateShareViaLinkOperation extends SyncOperation {
      * Set expiration date to update in Share resource.
      *
      * @param expirationDateInMillis    Expiration date to set to the public link.
+     *                                  A negative value clears the current expiration date, leaving the
+     *                                  link unrestricted. Zero makes no change.
      */
     public void setExpirationDateInMillis(long expirationDateInMillis) {
         this.mExpirationDateInMillis = expirationDateInMillis;
