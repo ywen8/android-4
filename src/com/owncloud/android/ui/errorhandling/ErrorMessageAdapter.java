@@ -46,7 +46,6 @@ import com.owncloud.android.operations.UploadFileOperation;
 import org.apache.commons.httpclient.ConnectTimeoutException;
 
 import java.io.File;
-import java.net.SocketTimeoutException;
 
 /**
  * Class to choose proper error messages to show to the user depending on the results of operations,
