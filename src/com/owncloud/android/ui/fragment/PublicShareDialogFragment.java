@@ -279,7 +279,7 @@ public class PublicShareDialogFragment extends DialogFragment {
         initPasswordToggleListener(view);
 
         // Confirm add public link
-        Button confirmAddPublicLinkButton = (Button) view.findViewById(R.id.confirmAddPublicLinkButton);
+        Button confirmAddPublicLinkButton = view.findViewById(R.id.confirmAddPublicLinkButton);
 
         confirmAddPublicLinkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -348,7 +348,7 @@ public class PublicShareDialogFragment extends DialogFragment {
         });
 
         // Cancel add public link
-        Button cancelAddPublicLinkButton = (Button) view.findViewById(R.id.cancelAddPublicLinkButton);
+        Button cancelAddPublicLinkButton = view.findViewById(R.id.cancelAddPublicLinkButton);
 
         cancelAddPublicLinkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -633,7 +633,7 @@ public class PublicShareDialogFragment extends DialogFragment {
         @Override
         public void onCheckedChanged(CompoundButton switchView, boolean isChecked) {
 
-            EditText shareViaLinkPasswordValue = (EditText) getView().
+            EditText shareViaLinkPasswordValue = getView().
                     findViewById(R.id.shareViaLinkPasswordValue);
 
             if (isChecked) {
@@ -759,8 +759,8 @@ public class PublicShareDialogFragment extends DialogFragment {
         @Override
         public void onCancelDatePicker() {
 
-            SwitchCompat expirationToggle = ((SwitchCompat) getView().
-                    findViewById(R.id.shareViaLinkExpirationSwitch));
+            SwitchCompat expirationToggle = getView().
+                    findViewById(R.id.shareViaLinkExpirationSwitch);
 
             // If the date has not been set yet, uncheck the toggle
             if (expirationToggle.isChecked() && getExpirationDateValue(getView()).getText() == "") {

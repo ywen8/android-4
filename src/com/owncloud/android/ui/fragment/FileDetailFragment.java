@@ -107,7 +107,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         mProgressController = new TransferProgressController((ComponentsGetter) getActivity());
-        ProgressBar progressBar = (ProgressBar)mView.findViewById(R.id.fdProgressBar);
+        ProgressBar progressBar = mView.findViewById(R.id.fdProgressBar);
         DisplayUtils.colorPreLollipopHorizontalProgressBar(progressBar);
         mProgressController.setProgressBar(progressBar);
     }
@@ -410,7 +410,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
      * @param filename to set
      */
     private void setFilename(String filename) {
-        TextView tv = (TextView) getView().findViewById(R.id.fdFilename);
+        TextView tv = getView().findViewById(R.id.fdFilename);
         if (tv != null) {
             tv.setText(filename);
         }
@@ -422,14 +422,14 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
      */
     private void setFiletype(OCFile file) {
         String mimetype = file.getMimetype();
-        TextView tv = (TextView) getView().findViewById(R.id.fdType);
+        TextView tv = getView().findViewById(R.id.fdType);
         if (tv != null) {
 			// mimetype      MIME type to set
             String printableMimetype = DisplayUtils.convertMIMEtoPrettyPrint(mimetype);
             tv.setText(printableMimetype);
         }
 
-        ImageView iv = (ImageView) getView().findViewById(R.id.fdIcon);
+        ImageView iv = getView().findViewById(R.id.fdIcon);
 
         if (iv != null) {
             Bitmap thumbnail;
@@ -475,7 +475,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
      * @param filesize in bytes to set
      */
     private void setFilesize(long filesize) {
-        TextView tv = (TextView) getView().findViewById(R.id.fdSize);
+        TextView tv = getView().findViewById(R.id.fdSize);
         if (tv != null) {
             tv.setText(DisplayUtils.bytesToHumanReadable(filesize, getActivity()));
         }
@@ -487,7 +487,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
      * @param milliseconds Unix time to set
      */
     private void setTimeModified(long milliseconds) {
-        TextView tv = (TextView) getView().findViewById(R.id.fdModified);
+        TextView tv = getView().findViewById(R.id.fdModified);
         if (tv != null) {
             tv.setText(DisplayUtils.unixTimeToHumanReadable(milliseconds));
         }
@@ -500,7 +500,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
         if (!isEmpty()) {
             // show the progress bar for the transfer
             getView().findViewById(R.id.fdProgressBlock).setVisibility(View.VISIBLE);
-            TextView progressText = (TextView) getView().findViewById(R.id.fdProgressText);
+            TextView progressText = getView().findViewById(R.id.fdProgressText);
             progressText.setVisibility(View.VISIBLE);
             FileDownloaderBinder downloaderBinder = mContainerActivity.getFileDownloaderBinder();
             FileUploaderBinder uploaderBinder = mContainerActivity.getFileUploaderBinder();
@@ -523,7 +523,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
         if (!isEmpty()) {
             // hides the progress bar
             getView().findViewById(R.id.fdProgressBlock).setVisibility(View.GONE);
-            TextView progressText = (TextView) getView().findViewById(R.id.fdProgressText);
+            TextView progressText = getView().findViewById(R.id.fdProgressText);
             progressText.setVisibility(View.GONE);
         }
     }
@@ -535,7 +535,7 @@ public class FileDetailFragment extends FileFragment implements OnClickListener 
         if (!isEmpty()) {
             // hides the progress bar
             getView().findViewById(R.id.fdProgressBlock).setVisibility(View.GONE);
-            TextView progressText = (TextView) getView().findViewById(R.id.fdProgressText);
+            TextView progressText = getView().findViewById(R.id.fdProgressText);
             progressText.setVisibility(View.GONE);
         }
     }

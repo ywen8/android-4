@@ -379,7 +379,7 @@ public class SynchronizeFolderOperation extends SyncOperation {
     }
 
 
-    private void preparePushOfLocalChanges() throws OperationCancelledException {
+    private void preparePushOfLocalChanges() {
         List<OCFile> children = getStorageManager().getFolderContent(mLocalFolder);
         mFoldersToVisit = new Vector<>(children.size());
         for (OCFile child : children) {
